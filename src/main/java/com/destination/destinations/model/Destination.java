@@ -1,4 +1,4 @@
-package model;
+package com.destination.destinations.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
