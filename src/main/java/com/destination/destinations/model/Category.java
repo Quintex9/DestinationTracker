@@ -1,8 +1,10 @@
 package com.destination.destinations.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,5 +16,6 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Destination> destinations;
+    @JsonManagedReference   // Jackson vie, že toto je "rodič"
+    private List<Destination> destinations;
 }
