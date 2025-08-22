@@ -9,9 +9,9 @@ const DestinationList = ({ destinations = [] }) => {
               className="card-img-top"
               alt={destination.name}
             />
-            <div class="card-body">
-                <h5 class="card-title">{destination.name}</h5>
-                <p class="card-text">{destination.description}</p>
+            <div className="card-body">
+                <h5 className="card-title">{destination.name}</h5>
+                <p className="card-text">{destination.description}</p>
                 {destination.price > 0.0 ? (<p class="card-text">{destination.price}</p>)
                 :
                 undefined}
