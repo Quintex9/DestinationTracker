@@ -1,0 +1,5 @@
+.fixed-image {
+  width: 600px;
+  height: 400px;
+  object-fit: cover; /* oreže a nedeformuje obrázok */
+}
