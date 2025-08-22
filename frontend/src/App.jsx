@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import DestinationList from "./assets/DestinationList";
+import DestinationList from "./DestinationList";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
