@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import DestinationList from "./DestinationList";
+import CategoryFilter from "./CategoryFilter";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -28,13 +29,17 @@ function App() {
     setSortOrder(event.target.value);
   };
 
+  const handleCategorySelect = (categoryId) => {
+    setSelectedCategory(categoryId ? Number(categoryId) : null);
+  };
+
   return (
     <div className="container">
       <div>
         <h1 className="my-4">Naše spoločné výlety</h1>
         <div className="row allign-items-center mb-4">
           <div className="col-md-3 col-sm-12 mb-12">
-            <p>Category filter</p>
+            <CategoryFilter categories={categories} onSelect={handleCategorySelect}/>
           </div>
           <div className="col-md-5 col-sm 12 mb-12">
             <input
