@@ -5,6 +5,8 @@ import CategoryFilter from "./components/CategoryFilter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DestinationPage from "./components/DestinationPage";
 import Navbar from "./components/Navbar";
+import About from "./components/About"
+import Contact from "./components/Contact"
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -74,6 +76,8 @@ function App() {
             }
           />
           <Route path="/destination/:id" element={<DestinationPage destinations={destinations}/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </div>
     </Router>
