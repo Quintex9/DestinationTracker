@@ -4,6 +4,7 @@ import DestinationList from "./components/DestinationList";
 import CategoryFilter from "./components/CategoryFilter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DestinationPage from "./components/DestinationPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar/>
       <div className="container">
         <Routes>
           <Route
