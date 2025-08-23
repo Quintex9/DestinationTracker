@@ -28,6 +28,7 @@ export default function DestinationPage({ destinations }) {
         )}
         <Opinion imageURl={destination.michalURL} text={destination.nazorMichal}/>
         <Opinion imageURl={destination.lenkaURL} text={destination.nazorLenka}/>
+        
         <Link to="/" className="btn btn-secondary mt-4">
           ← Späť na zoznam
         </Link>
