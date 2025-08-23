@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import DestinationList from "./DestinationList";
 import CategoryFilter from "./CategoryFilter";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DestinationPage from "./DestinationPage";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -29,41 +31,50 @@ function App() {
   };
 
   const filteredDestinations = (
-  selectedCategory
-    ? categories.find(c => c.id === selectedCategory)?.destinations || []
-    : destinations
-).filter(destination =>
-  destination.name.toLowerCase().includes(searchTerm.toLowerCase())
-);
-
+    selectedCategory
+      ? categories.find((c) => c.id === selectedCategory)?.destinations || []
+      : destinations
+  ).filter((destination) =>
+    destination.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="container">
-      <div>
-        <h1 className="my-4">Naše spoločné výlety</h1>
-        <div className="row allign-items-center mb-4">
-          <div className="col-md-3 col-sm-12 mb-12">
-            <CategoryFilter
-              categories={categories}
-              onSelect={handleCategorySelect}
-            />
-          </div>
-          <div className="col-md-5 col-sm 12 mb-12">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search for destinations"
-              onChange={handleSearchChange}
-            ></input>
-          </div>
-        </div>
-        {filteredDestinations.length ? (
-          <DestinationList destinations={filteredDestinations} />
-        ) : (
-          <p>No products found</p>
-        )}
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <h1 className="my-4">Naše spoločné výlety</h1>
+                <div className="row allign-items-center mb-4">
+                  <div className="col-md-3 col-sm-12 mb-12">
+                    <CategoryFilter
+                      categories={categories}
+                      onSelect={handleCategorySelect}
+                    />
+                  </div>
+                  <div className="col-md-5 col-sm 12 mb-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search for destinations"
+                      onChange={handleSearchChange}
+                    ></input>
+                  </div>
+                </div>
+                {filteredDestinations.length ? (
+                  <DestinationList destinations={filteredDestinations} />
+                ) : (
+                  <p>No products found</p>
+                )}
+              </>
+            }
+          />
+          <Route path="/destination/:id" element={<DestinationPage destinations={destinations}/>}/>
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
