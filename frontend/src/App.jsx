@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import DestinationList from "./DestinationList";
-import CategoryFilter from "./CategoryFilter";
+import DestinationList from "./components/DestinationList";
+import CategoryFilter from "./components/CategoryFilter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DestinationPage from "./DestinationPage";
+import DestinationPage from "./components/DestinationPage";
 
 function App() {
   const [destinations, setDestinations] = useState([]);

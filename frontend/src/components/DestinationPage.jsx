@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import Opinion from "./Opinion";
 
 export default function DestinationPage({ destinations }) {
   const { id } = useParams();
@@ -25,6 +26,8 @@ export default function DestinationPage({ destinations }) {
         {destination.price > 0 && (
           <h4 className="mt-3 text-primary">{destination.price} €</h4>
         )}
+        <Opinion imageURl={destination.michalURL} text={destination.nazorMichal}/>
+        <Opinion imageURl={destination.lenkaURL} text={destination.nazorLenka}/>
         <Link to="/" className="btn btn-secondary mt-4">
           ← Späť na zoznam
         </Link>
