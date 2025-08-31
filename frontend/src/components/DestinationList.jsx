@@ -9,7 +9,8 @@ const DestinationList = ({ destinations = [] }) => {
             to={`/destination/${destination.id}`}
             className="text-decoration-none"
           >
-            <div className="card h-100 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+            {/*Lenke sa páči farba $green-700 , $yellow-600 , $orange-700 , $pink-200 , $teal-200 , $indigo-300 ,  text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3*/}
+            <div className={`card h-100 ${destination.farba}`}>
               <img
                 src={destination.imageURL || "https://placehold.co/600x400"}
                 className="card-img-top fixed-image"
@@ -17,7 +18,7 @@ const DestinationList = ({ destinations = [] }) => {
               />
               <div className="card-body">
                 <h5 className="card-title">{destination.name}</h5>
-                <p className="card-text">{destination.description}</p>
+                <p className="card-text">Spoločné hodnotenie: {((destination.ratingMichal+destination.ratingLenka)/2).toFixed(2)}⭐</p>
                 {destination.price > 0.0 ? (
                   <p class="card-text">{destination.price}€</p>
                 ) : undefined}

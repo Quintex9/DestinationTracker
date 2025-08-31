@@ -1,0 +1,31 @@
+@use "sass:color";
+@use "bootstrap/scss/bootstrap" as *;
+
+.green-card {
+  color: $black;
+  background-color: $green-700; // jemná zelená
+  border: 1px solid $green-300;
+  border-radius: .5rem;
+}
+
+.teal-card {
+  color: $black;
+  background-color: $teal-200; // jemná zelená
+  border: 1px solid $green-300;
+  border-radius: .5rem;
+}
+
+.blue-card {
+  color: $black;
+  background-color: $blue-300;
+  border: 1px solid $blue-900;
+  border-radius: .5rem;
+}
+
+.orange-card {
+  color: $black;
+  background-color: $orange-300;
+  border: 1px solid $orange-900;
+  border-radius: .5rem;
+}
+

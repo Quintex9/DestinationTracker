@@ -9,3 +9,10 @@
   height: 100px;
   object-fit: cover;
 }
+
+.my-green-card {
+  color: $green-700;
+  background-color: tint-color($green-700, 90%);
+  border: 1px solid tint-color($green-700, 80%);
+  border-radius: .3rem; // ekvivalent rounded-3
+}
