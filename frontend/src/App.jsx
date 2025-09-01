@@ -16,11 +16,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/destinations")
+    fetch("https://destinationtracker.onrender.com/api/destinations")
       .then((response) => response.json())
       .then((data) => setDestinations(data));
 
-    fetch("http://localhost:8080/api/categories")
+    fetch("https://destinationtracker.onrender.com/api/categories")
       .then((response) => response.json())
       .then((data) => setCategories(data));
   }, []);
