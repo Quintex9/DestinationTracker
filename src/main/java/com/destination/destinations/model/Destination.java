@@ -17,6 +17,20 @@ public class Destination {
     private String imageURL;
     private Double price;
 
+    private Double duration;
+    @Column(length = 2000)
+    private String nazorMichal;
+    @Column(length = 2000)
+    private String nazorLenka;
+    private String michalURL;
+    private String lenkaURL;
+
+    private Double ratingMichal;
+    private Double ratingLenka;
+
+    private String farba;
+
+
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     @JsonBackReference   //Jackson vie, že toto je "dieťa"
