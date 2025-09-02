@@ -57,7 +57,7 @@ public class DataSeeder implements CommandLineRunner {
         kupeleMaleBielice.setRatingLenka(3.0);
         kupeleMaleBielice.setRatingMichal(3.0);
         kupeleMaleBielice.setFarba("blue-card");
-        kupeleMaleBielice.setLan(-48.6058);
+        kupeleMaleBielice.setLat(-48.6058);
         kupeleMaleBielice.setLng(18.3756);
 
         Destination javorina = new Destination();
@@ -74,7 +74,7 @@ public class DataSeeder implements CommandLineRunner {
         javorina.setRatingLenka(2.0);
         javorina.setRatingMichal(3.0);
         javorina.setFarba("green-card");
-        javorina.setLan(-48.7122);
+        javorina.setLat(-48.7122);
         javorina.setLng(18.0128);
 
         Destination marhat = new Destination();
@@ -91,7 +91,7 @@ public class DataSeeder implements CommandLineRunner {
         marhat.setRatingLenka(4.9);
         marhat.setRatingMichal(4.5);
         marhat.setFarba("green-card");
-        marhat.setLan(-48.5949);
+        marhat.setLat(-48.5949);
         marhat.setLng(17.9705);
 
         Destination gric = new Destination();
@@ -108,7 +108,7 @@ public class DataSeeder implements CommandLineRunner {
         gric.setRatingLenka(3.0);
         gric.setRatingMichal(2.0);
         gric.setFarba("green-card");
-        gric.setLan(-48.7122);
+        gric.setLat(-48.7122);
         gric.setLng(18.7136);
 
         Destination inovec = new Destination();
@@ -125,7 +125,7 @@ public class DataSeeder implements CommandLineRunner {
         inovec.setRatingLenka(5.0);
         inovec.setRatingMichal(4.0);
         inovec.setFarba("green-card");
-        inovec.setLan(-48.6833);
+        inovec.setLat(-48.6833);
         inovec.setLng(17.9667);
 
         Destination oponicky = new Destination();
@@ -142,7 +142,7 @@ public class DataSeeder implements CommandLineRunner {
         oponicky.setRatingLenka(4.5);
         oponicky.setRatingMichal(4.8);
         oponicky.setFarba("green-card");
-        oponicky.setLan(-48.4480);
+        oponicky.setLat(-48.4480);
         oponicky.setLng(18.1567);
 
         Destination ranc = new Destination();
@@ -159,7 +159,7 @@ public class DataSeeder implements CommandLineRunner {
         ranc.setRatingLenka(4.5);
         ranc.setRatingMichal(5.0);
         ranc.setFarba("orange-card");
-        ranc.setLan(48.5975);
+        ranc.setLat(48.5975);
         ranc.setLng(18.0486);
 
         destinationRepository.saveAll(Arrays.asList(marhat, gric, inovec,kupeleMaleBielice,javorina, oponicky, ranc));

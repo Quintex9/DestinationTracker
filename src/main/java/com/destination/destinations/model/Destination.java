@@ -30,7 +30,7 @@ public class Destination {
 
     private String farba;
 
-    private Double lan;
+    private Double lat;
     private Double lng;
 
 
