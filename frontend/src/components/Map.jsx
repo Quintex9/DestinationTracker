@@ -12,11 +12,25 @@ const markerIcon = new L.Icon({
 });
 
 const icons = {
-    Hiking: new L.icon({iconUrl: "/images/hikingIcon.jpg", iconSize: [30,30]}),
-    Spa: new L.icon({iconUrl: "/images/aquaIcon.png", iconSize: [30,30]}),
-    Castles: new L.icon({iconUrl: "/images/castleIcon.jpg", iconSize: [30,30]}),
-    Zoo: new L.icon({iconUrl: "/images/zooIcon.png", iconSize: [30,30]}),
-}
+  Hiking: new L.divIcon({
+    html: "<div class='custom-marker hiking'>🥾</div>",
+    className: "", // zruší defaultné Leaflet className
+  }),
+  Castles: new L.divIcon({
+    html: "<div class='custom-marker castles'>🏰</div>",
+    className: "",
+  }),
+  Zoo: new L.divIcon({
+    html: "<div class='custom-marker zoo'>🐒</div>",
+    className: "",
+  }),
+  Spa: new L.divIcon({
+    html: "<div class='custom-marker spa'>💧</div>",
+    className: "",
+  }),
+};
+
+
 
 function Map({ destinations }) {
 
@@ -42,6 +56,7 @@ function Map({ destinations }) {
         >
           <Popup>
             <div>
+              <img src={dest.imageURL} className="popup-img"></img>
               <a
                 href={`/destination/${dest.id}`}
                 style={{
