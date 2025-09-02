@@ -12,7 +12,7 @@ const markerIcon = new L.Icon({
 });
 
 function Map({ destinations }) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <MapContainer
@@ -34,9 +34,19 @@ function Map({ destinations }) {
           icon={markerIcon}
         >
           <Popup>
-            {dest.name}
-            <button className="btn btn-sm btn-primary mt-2"onClick={() => navigate(`/destination/${dest.id}`)}></button>
-            </Popup>
+            <div>
+              <a
+                href={`/destination/${dest.id}`}
+                style={{
+                  textDecoration: "none",
+                  color: "#007bff",
+                  fontWeight: "bold",
+                }}
+              >
+                {dest.name}
+              </a>
+            </div>
+          </Popup>
         </Marker>
       ))}
     </MapContainer>
