@@ -11,6 +11,11 @@ body {
   margin: 0;
   background: linear-gradient(135deg, #0f2027, #2c5364, #203a43, #2c7744);
   color: #fff;
+  margin-bottom: 8px;
+}
+
+footer {
+  margin-top: 8px;
 }
 
 .logo {
@@ -71,3 +76,35 @@ body {
   transform: scale(1.3);
   transition: transform 0.2s ease;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #1b263b; /* tmavá modrá */
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 300px;
+}
+
+.modal-content h3 {
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
