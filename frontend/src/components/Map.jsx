@@ -10,6 +10,13 @@ const markerIcon = new L.Icon({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
+const icons = {
+    Hiking: new L.icon({iconUrl: "/images/hikingIcon.jpg", iconSize: [30,30]}),
+    Spa: new L.icon({iconUrl: "/images/aquaIcon.png", iconSize: [30,30]}),
+    Castles: new L.icon({iconUrl: "/images/castleIcon.jpg", iconSize: [30,30]}),
+    Zoo: new L.icon({iconUrl: "/images/zooIcon.png", iconSize: [30,30]}),
+}
+
 function Map({ destinations }) {
 
   return (
@@ -29,7 +36,7 @@ function Map({ destinations }) {
         <Marker
           key={dest.id}
           position={[dest.lat, dest.lng]}
-          icon={markerIcon}
+          icon={icons[dest.category.name]}
         >
           <Popup>
             <div>
