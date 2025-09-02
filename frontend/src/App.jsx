@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Map from "./components/Map.jsx";
 import Contact from "./components/Contact";
 import { api } from "./api.js";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -105,6 +106,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
   );
 }

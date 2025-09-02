@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import Footer from "./Footer";
 
 // vlastná ikonka bodky (Leaflet default má veľký pin)
 const markerIcon = new L.Icon({
@@ -20,6 +21,7 @@ const icons = {
 function Map({ destinations }) {
 
   return (
+    <>
     <MapContainer
       center={[48.669, 19.699]} // stred Slovenska
       zoom={7}
@@ -55,7 +57,10 @@ function Map({ destinations }) {
         </Marker>
       ))}
     </MapContainer>
+    <Footer/>
+    </>
   );
+  
 }
 
 export default Map;
