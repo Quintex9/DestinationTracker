@@ -37,7 +37,14 @@ function App() {
     })();
   }, []);
 
-  if (loading) return <p>Načítavam...</p>;
+  if (loading)
+    return (
+      <div>
+        <h1>Prebúdzam databázu</h1>
+        <h2>Po načítaní databázy sa automaticky stránka refreshne</h2>
+        <p>Toto je bezplatná stránka, ktorá používa Vercel, Render a Neon...</p>
+      </div>
+    );
   if (err) return <p>{err}</p>;
 
   const handleSearchChange = (event) => {
