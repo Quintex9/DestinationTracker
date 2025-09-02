@@ -5,8 +5,9 @@ import CategoryFilter from "./components/CategoryFilter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DestinationPage from "./components/DestinationPage";
 import Navbar from "./components/Navbar";
-import About from "./components/About"
-import Contact from "./components/Contact"
+import About from "./components/About";
+import Contact from "./components/Contact";
+import { api } from "./api.js";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -15,15 +16,29 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    fetch("https://destinationtracker.onrender.com/api/destinations")
-      .then((response) => response.json())
-      .then((data) => setDestinations(data));
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState("");
 
-    fetch("https://destinationtracker.onrender.com/api/categories")
-      .then((response) => response.json())
-      .then((data) => setCategories(data));
+  useEffect(() => {
+    (async () => {
+      try {
+        const [d, c] = await Promise.all([
+          api.getDestinations(),
+          api.getCategories(),
+        ]);
+        setDestinations(d);
+        setCategories(c);
+      } catch (e) {
+        setErr("Prebúdzam server… Skús to o chvíľku znovu.");
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, []);
+
+  if (loading) return <p>Načítavam...</p>;
+  if (err) return <p>{err}</p>;
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -43,7 +58,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <div className="container">
         <Routes>
           <Route
@@ -75,9 +90,12 @@ function App() {
               </>
             }
           />
-          <Route path="/destination/:id" element={<DestinationPage destinations={destinations}/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
+          <Route
+            path="/destination/:id"
+            element={<DestinationPage destinations={destinations} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>
