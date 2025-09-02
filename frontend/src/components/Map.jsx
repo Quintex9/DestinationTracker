@@ -35,7 +35,7 @@ function Map({ destinations }) {
         >
           <Popup>
             {dest.name}
-            <button onClick={() => navigate(`/destination/${dest.id}`)}></button>
+            <button className="btn btn-sm btn-primary mt-2"onClick={() => navigate(`/destination/${dest.id}`)}></button>
             </Popup>
         </Marker>
       ))}
