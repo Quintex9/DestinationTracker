@@ -1,6 +1,7 @@
 package com.destination.destinations.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -36,6 +37,6 @@ public class Destination {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", nullable = false)
-    @JsonBackReference   //Jackson vie, že toto je "dieťa"
+    @JsonIgnoreProperties("destinations")
     private Category category;
 }
