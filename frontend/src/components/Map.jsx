@@ -57,7 +57,6 @@ function Map({ destinations }) {
         </Marker>
       ))}
     </MapContainer>
-    <Footer/>
     </>
   );
   
