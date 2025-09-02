@@ -34,7 +34,7 @@ public class Destination {
     private Double lng;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", nullable = false)
     @JsonBackReference   //Jackson vie, že toto je "dieťa"
     private Category category;
