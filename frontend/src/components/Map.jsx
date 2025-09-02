@@ -1,6 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import { useNavigate } from "react-router-dom";
 
 // vlastná ikonka bodky (Leaflet default má veľký pin)
 const markerIcon = new L.Icon({
@@ -12,7 +11,6 @@ const markerIcon = new L.Icon({
 });
 
 function Map({ destinations }) {
-  const navigate = useNavigate();
 
   return (
     <MapContainer
@@ -30,7 +28,7 @@ function Map({ destinations }) {
       {destinations.map((dest) => (
         <Marker
           key={dest.id}
-          position={[dest.lat, dest.lng]} // musíš mať v databáze súradnice
+          position={[dest.lat, dest.lng]}
           icon={markerIcon}
         >
           <Popup>

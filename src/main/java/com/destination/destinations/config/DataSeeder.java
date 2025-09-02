@@ -57,8 +57,8 @@ public class DataSeeder implements CommandLineRunner {
         kupeleMaleBielice.setRatingLenka(3.0);
         kupeleMaleBielice.setRatingMichal(3.0);
         kupeleMaleBielice.setFarba("blue-card");
-        kupeleMaleBielice.setLat(48.6058);
-        kupeleMaleBielice.setLng(18.3756);
+        kupeleMaleBielice.setLat(48.623425);
+        kupeleMaleBielice.setLng(18.3385238999999);
 
         Destination javorina = new Destination();
         javorina.setName("Pánska javorina");
