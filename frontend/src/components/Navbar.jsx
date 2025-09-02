@@ -14,9 +14,9 @@ export default function Navbar() {
       <li className="nav-item">
         <NavLink
           className={"nav-link"}
-          to="/about"
+          to="/mapa"
         >
-          O stránke
+          Mapa
         </NavLink>
       </li>
       <li className="nav-item">

@@ -5,7 +5,7 @@ import CategoryFilter from "./components/CategoryFilter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DestinationPage from "./components/DestinationPage";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+import Map from "./components/Map.jsx";
 import Contact from "./components/Contact";
 import { api } from "./api.js";
 
@@ -101,7 +101,7 @@ function App() {
             path="/destination/:id"
             element={<DestinationPage destinations={destinations} />}
           />
-          <Route path="/about" element={<About />} />
+          <Route path="/mapa" element={<Map destinations={destinations} />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
