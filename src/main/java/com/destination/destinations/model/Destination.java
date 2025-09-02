@@ -30,6 +30,9 @@ public class Destination {
 
     private String farba;
 
+    private Double lan;
+    private Double lng;
+
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
