@@ -1,3 +1,5 @@
+const BASE = "https://destinationtracker.onrender.com"
+
 function wait(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
