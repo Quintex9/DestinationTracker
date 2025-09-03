@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import { api } from "./api.js";
 import Footer from "./components/Footer.jsx";
 import RoleModal from "./components/RoleModal.jsx";
+import { Navigate } from "react-router-dom";
 
 function App() {
   const [role, setRole] = useState(localStorage.getItem("role"));
@@ -40,6 +41,12 @@ function App() {
     })();
   }, []);
 
+  useEffect(() => {
+    if (!localStorage.getItem("role")) {
+      setRole(null);
+    }
+  }, []);
+
   if (loading)
     return (
       <div>
@@ -68,9 +75,8 @@ function App() {
 
   return (
     <Router>
+      <Navbar setRole={setRole} />
       {!role && <RoleModal setRole={setRole} />}
-
-      <Navbar />
       <div className="container">
         <Routes>
           <Route
@@ -95,7 +101,7 @@ function App() {
                   </div>
                 </div>
                 {filteredDestinations.length ? (
-                  <DestinationList destinations={filteredDestinations} />
+                  <DestinationList role={role} destinations={filteredDestinations} />
                 ) : (
                   <p>No products found</p>
                 )}
@@ -110,7 +116,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

@@ -57,7 +57,7 @@ function Map({ destinations }) {
           <Popup>
             <div>
               <img src={dest.imageURL} className="popup-img"></img>
-              <a
+              {localStorage.getItem("role") === "Admin" ? (<a
                 href={`/destination/${dest.id}`}
                 style={{
                   textDecoration: "none",
@@ -66,7 +66,8 @@ function Map({ destinations }) {
                 }}
               >
                 {dest.name}
-              </a>
+              </a>) : <a>{dest.name}</a>}
+
             </div>
           </Popup>
         </Marker>
