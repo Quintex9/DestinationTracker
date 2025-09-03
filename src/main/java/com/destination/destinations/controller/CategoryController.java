@@ -10,7 +10,7 @@ import com.destination.destinations.service.CategoryService;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/categories")
+@RequestMapping("/api/categories")
 @CrossOrigin(origins = {"http://localhost:5173", "https://destination-tracker-zyd9.vercel.app/"})
 public class CategoryController {
 
