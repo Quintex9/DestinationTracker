@@ -35,6 +35,7 @@ public class Destination {
     private Double lng;
 
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", nullable = false)
     @JsonIgnoreProperties("destinations")

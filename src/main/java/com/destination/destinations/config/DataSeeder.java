@@ -67,7 +67,7 @@ public class DataSeeder implements CommandLineRunner {
         javorina.setPrice(0.0);
         javorina.setCategory(hiking);
         javorina.setDuration(2.0);
-        javorina.setNazorLenka("Nikdy viac. Horšiu svalobicu som nemala. Krajina bola nádherná to musím uznať. Aj výhľad. Ale hrooozne dlhé to bolo, nevládala som, potila som sa, muchy ma žrali. \n");
+        javorina.setNazorLenka("Nikdy viac. Horšiu svalovicu som nemala. Krajina bola nádherná to musím uznať. Aj výhľad. Ale hrooozne dlhé to bolo, nevládala som, potila som sa, muchy ma žrali. \n");
         javorina.setNazorMichal("Nebola to síce najľahšia túra ale bolo pekne vonku a bola to taká výzva. Pravdepodobne by som ešte raz zopakoval ale len na bicykli.");
         javorina.setMichalURL("/images/Michal.jpeg");
         javorina.setLenkaURL("/images/Lenka.png");

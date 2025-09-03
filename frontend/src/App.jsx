@@ -9,8 +9,10 @@ import Map from "./components/Map.jsx";
 import Contact from "./components/Contact";
 import { api } from "./api.js";
 import Footer from "./components/Footer.jsx";
+import RoleModal from "./components/RoleModal.jsx";
 
 function App() {
+  const [role, setRole] = useState(localStorage.getItem("role"));
   const [destinations, setDestinations] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -66,6 +68,8 @@ function App() {
 
   return (
     <Router>
+      {!role && <RoleModal setRole={setRole} />}
+
       <Navbar />
       <div className="container">
         <Routes>
